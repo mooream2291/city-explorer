@@ -11,7 +11,7 @@ app.use(CORS());
 
 app.get('/location', (request, response) => {
   const getLocation = require('./data/location.json');
-  const searchQuery = request.params.city;
+  const searchQuery = request.query.city;
   const newLocation = new Location(getLocation[0], searchQuery);
   response.send(newLocation);
 
@@ -19,7 +19,7 @@ app.get('/location', (request, response) => {
 
 function Location (city, search) {
   this.search_query = search;
-  this.formatted = city.display_name;
+  this.formatted_query = city.display_name;
   this.latitude = city.lat;
   this.longitude = city.lon;
 }
