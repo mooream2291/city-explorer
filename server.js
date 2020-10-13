@@ -25,23 +25,23 @@ function Location (city, search) {
 }
 
 app.get('/weather', (request, response) => {
-    const getWeather = require('./data/weather.json');
-    const getWeatherArr = [];
-    weatherArr.data.forEach(weather => {
-        const currentWeath = new Weather(weather);
-        getWeather.push(getWeatherArr);
-    }
-function Weather (data) {
-    this.forecast = data.weather.description;
-    this.time = data.datetime
+  const getWeather = require('./data/weather.json');
+  const getWeatherArr = [];
+  getWeather.data.forEach(weather => {
+    const currentWeath = new Weather(weather);
+    getWeatherArr.push(currentWeath);
+  });
+  response.send(getWeatherArr);
+});
 
+
+function Weather (data) {
+  this.forecast = data.weather.description;
+  this.time = data.datetime
 }
 
-    )
-})
-
 app.listen(PORT, () => {
-  console.log(`{PORT}`);
+  console.log(`${PORT}`);
 });
 
 
