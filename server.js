@@ -45,7 +45,7 @@ function Weather (data) {
 
 app.get('*', (request, response) => {
     response.status(500).send('sorry, something went wrong');
-}
+});
 
 app.listen(PORT, () => {
   console.log(`${PORT}`);
