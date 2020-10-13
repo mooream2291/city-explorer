@@ -24,6 +24,22 @@ function Location (city, search) {
   this.longitude = city.lon;
 }
 
+app.get('/weather', (request, response) => {
+    const getWeather = require('./data/weather.json');
+    const getWeatherArr = [];
+    weatherArr.data.forEach(weather => {
+        const currentWeath = new Weather(weather);
+        getWeather.push(getWeatherArr);
+    }
+function Weather (data) {
+    this.forecast = data.weather.description;
+    this.time = data.datetime
+
+}
+
+    )
+})
+
 app.listen(PORT, () => {
   console.log(`{PORT}`);
 });
