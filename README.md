@@ -1,5 +1,3 @@
-# lab-06
-
 # City Explorer API
 
 **Author**: Ashley Moore
